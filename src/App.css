@@ -1,0 +1,154 @@
+
+html {
+  box-sizing: border-box;
+  /* color: #7b3825; */
+  font-family: "Gotham Rounded Bold, Gotham Rounded Medium, Gotham Rounded Book, Trajan Pro Bold, Metropolis, Montserrat";
+  position: relative;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+}
+
+
+@keyframes animate-background {
+  0% {
+      background-position: 0 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0 50%;
+  }
+}
+
+.gradient-custom-1 {
+/* Fallback for old browsers */
+background: #6a11cb;
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+background-size: 400% 400%;
+animation: animate-background 10s infinite ease-in-out;
+}
+
+.gradient-custom-2 {
+background: #833ab4;
+background: -webkit-linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+background-size: 400% 400%;
+animation: animate-background 10s infinite ease-in-out;
+}
+
+.gradient-custom-3 {
+background: #833ab4;
+background: -webkit-linear-gradient(to right, #7c2d12, #172554, #0a1436);
+background: linear-gradient(to right, #7c2d12, #172554, #0a1436);
+background-size: 400% 400%;
+animation: animate-background 10s infinite ease-in-out;
+}
+
+.gradient-custom-4 {
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #23387f, #172554, #0a1436);
+  background: linear-gradient(to right, #23387f, #172554, #0a1436);
+  background-size: 400% 400%;
+  animation: animate-background 15s infinite ease-in-out;
+  }
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar { 
+  width: 8px; 
+  height: 8px;
+} 
+
+/* Track */
+::-webkit-scrollbar-track { 
+  background: #f1f1f1; 
+} 
+
+/* Handle */
+::-webkit-scrollbar-thumb { 
+  background: #c7c7c7; 
+  border-radius: 5px; 
+} 
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { 
+  background: #a0a0a0; 
+}
+
+.tooltip {
+  @apply absolute opacity-0 transition-opacity duration-300 pointer-events-none;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply opacity-100 z-50 pointer-events-auto;
+}
+
+/* Spin */
+.loader {
+  --dim: 3rem;
+  width: var(--dim);
+  height: var(--dim);
+  position: absolute;
+  margin: auto;
+  animation: spin988 2s linear infinite;
+}
+
+.loader .circle {
+  --color: #333;
+  --dim: 1.1rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.loader .circle:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin988 {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  20%, 25% {
+    transform: scale(1.2) rotate(90deg);
+  }
+
+  45%, 50% {
+    transform: scale(1) rotate(180deg);
+  }
+
+  70%, 75% {
+    transform: scale(1.2) rotate(270deg);
+  }
+
+  95%, 100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
